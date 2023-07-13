@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion de Données</title>
+    <link rel="stylesheet" href="./application.css">
 </head>
-<body>
+<div>
+    //creer navbar//
     <header>
         <nav id="barre">
     
@@ -23,30 +25,41 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container">
 
-        <h1>Gestion de Données</h1>
-    
+
+    </header>
+
+    <div class="hun"><h1>Gestion de Données</h1></div>
+
+    <div class="namelab">
+        
         <form action="traitement.php">
             <label for="fname">Prénom</label>
             <input type="text" id="fname" name="firstname" placeholder="Votre nom et prénom">
+    
+            <label for="fname">Nom</label>
+            <input type="text" id="fname" name="firstname" placeholder="Votre nom et prénom">
+    
+            <label for="emailAddress">Email</label>
+            <input id="emailAddress" type="email" name="email" placeholder="Votre email">
+    
+            <label for="subject">Mots de Passe</label>
+            <!-- <textarea id="subject" name="subject" placeholder="Mots de Passe" style="height:200px"></textarea> -->
 
-          <label for="fname">Nom</label>
-          <input type="text" id="fname" name="firstname" placeholder="Votre nom et prénom">
+            <!-- <textarea type="password" id="mot_de_passe" size="20" /></textarea> -->
+            <!-- <input type="submit" value="Envoyer"> -->
+
+            <div class="field-wrap">
+                <!-- <textarea type="password" id="mot_de_passe" size="20" /></textarea> -->
+                <input type="password"required autocomplete="off"/>
+            </div>
     
-          <label for="emailAddress">Email</label>
-          <input id="emailAddress" type="email" name="email" placeholder="Votre email">
-    
-          <label for="subject">Mots de Passe</label>
-          <textarea id="subject" name="subject" placeholder="Votre message" style="height:200px"></textarea>
-    
-          <input type="submit" value="Envoyer">
+            <button type="submit" class="button button-block"/>Get Started</button>
         </form>
     
-      </div>
-
-
+    </div>
+    
+    </div>
     <script src="script.js"></script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

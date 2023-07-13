@@ -1,10 +1,17 @@
 body {
-	background: #1690A7;
+	background: #298b9e;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	flex-direction: column;
+    background-image: url(https://cdn.weka-fachmedien.de/media_uploads/images/1499845067-283-wor9rfqnj.jpeg);
+    @keyframes light{
+    50%{ 
+        box-shadow:  5px 0px 10px rgb(228, 57, 57), -5px 0px 10px rgb(65, 224, 17);
+    
+    }
+} 
 }
 
 *{
@@ -18,7 +25,37 @@ form {
 	padding: 30px;
 	background: #201e1e;
 	border-radius: 15px;
+    
+    
 }
+
+.namelab{
+    
+    box-shadow:  12px 0px 85px rgba(246, 250, 245, 0.87), 15px 0px 20px rgba(58, 39, 224, 0.699), -10px 0px 10px rgba(39, 187, 224, 0.699);
+    text-shadow: 0 0 60px rgba(9, 133, 118, 0.8);
+    margin: auto;
+    max-width: 900px;
+    text-shadow: 0 0 60px rgba(9, 133, 118, 0.8);
+    margin: auto;
+    max-width: 900px;
+    
+}
+textarea{
+    
+    display: inline-table;
+    width: 62%;
+    font-size: 10px;
+    /* display: block; */
+    /* width: 100%;
+    height: 100%; */
+    padding: 5px 10px;
+    border-radius: 0;
+    transition: border-color .25s ease, box-shadow .25s ease;
+
+    /* padding: 5px; */
+}
+
+   
 
 h2 {
 	text-align: center;
