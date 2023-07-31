@@ -31,9 +31,10 @@ use MaConnexion as GlobalMaConnexion;
             echo "Erreur : " . $e->getMessage();
         }
     }
-    public function select($idPrenom,$nom, $email, $mots_de_pass){
+    
+    public function select($table, $column){
         try {
-            $requete = "SELECT idPrenom, nom, email, mots_de_pass FROM utilisateur WHERE 1";
+            $requete = "SELECT $column from $table";
             $resultat = $this->connexionPDO->query($requete);
             $resultat = $resultat->fetchAll(PDO::FETCH_ASSOC); //Recupere le resultat de la requete dans un tableau associatif
             return $resultat;
@@ -41,6 +42,27 @@ use MaConnexion as GlobalMaConnexion;
         } catch (PDOException $e) {
             echo "Erreur : ".$e->getMessage();
         }    
+    }
+
+    public function insertion($idPrenom, $nom, $email, $mots_de_pass){
+        try {
+            $requete = "INSERT INTO contact (idprenom, nom, email, mots_de_pass) VALUES(:nom, :prenom, :num, :mail, :adresse)";
+            $requete_prepare = $this->connexionPDO->prepare($requete);
+
+            $requete_prepare->bindParam(':idprenom',$idprenom,PDO::PARAM_STR);
+            $requete_prepare->bindParam(':prenom',$prenom,PDO::PARAM_STR);
+            $requete_prepare->bindParam(':num',$num,PDO::PARAM_STR);
+            $requete_prepare->bindParam(':mail',$mail,PDO::PARAM_STR);
+            $requete_prepare->bindParam(':adresse',$adresse,PDO::PARAM_STR);
+
+            $requete_prepare->execute();
+            echo 'insertion reussie';
+
+            return $requete_prepare;
+            
+        }catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+        }
     }
    
     public function delete($idPrenom,$nom, $email, $mots_de_pass){
@@ -93,7 +115,7 @@ use MaConnexion as GlobalMaConnexion;
     }
  }
 
- $test = new MaConnexion("application_base_données", "", "root", "localhost");
+ $test = new MaConnexion("disponibilité_des_salles", "", "root", "localhost");
  
 
 ?>
