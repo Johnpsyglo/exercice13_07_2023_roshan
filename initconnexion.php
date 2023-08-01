@@ -46,7 +46,7 @@ use MaConnexion as GlobalMaConnexion;
 
     public function insertion($idPrenom, $nom, $email, $mots_de_pass){
         try {
-            $requete = "INSERT INTO contact (idprenom, nom, email, mots_de_pass) VALUES(:nom, :prenom, :num, :mail, :adresse)";
+            $requete = "INSERT INTO INSERT INTO `utilisateur`(`Domicile`, `À propos`, `Services`, `Chambre`, `Galerie`, `Réserver une chambre`, `Contact`, `Inscrivez-vous`, `Connexion`, `Mon compte`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]')";
             $requete_prepare = $this->connexionPDO->prepare($requete);
 
             $requete_prepare->bindParam(':idprenom',$idprenom,PDO::PARAM_STR);
